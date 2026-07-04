@@ -1,0 +1,40 @@
+# ── Virtual Environment ───────────────────────────────────────
+mgvit_env/
+venv/
+env/
+.env
+
+# ── Checkpoints — push manually when ready ────────────────────
+checkpoints/
+
+# ── Logs ─────────────────────────────────────────────────────
+logs/
+
+# ── Results / Plots ───────────────────────────────────────────
+results/
+
+# ── Dataset — never push, too large ──────────────────────────
+datasets/
+*.avi
+*.mp4
+*.mkv
+
+# ── Python cache ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Mac junk ─────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Jupyter ──────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Misc ─────────────────────────────────────────────────────
+*.log
+*.tmp
