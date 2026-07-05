@@ -27,7 +27,7 @@ __pycache__/
 .Python
 
 # ── Mac junk ─────────────────────────────────────────────────
-.DS_Store
+.DS_Store                                                       
 .AppleDouble
 .LSOverride
 

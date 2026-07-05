@@ -20,11 +20,11 @@ from model import MGViT
 
 os.makedirs(Config.RESULTS_DIR, exist_ok=True)
 
-RUN_ID = 0   # ← change to 1 or 2 for other runs
+RUN_ID = 1   # ← change to 1 or 2 for other runs
 
 
 # ── Load checkpoint ───────────────────────────────────────────
-def load_checkpoint(run_id=0):
+def load_checkpoint(run_id=1):
     ckpt_path = os.path.join(Config.CHECKPOINT_DIR, f"best_run{run_id}.pt")
     if not os.path.exists(ckpt_path):
         raise FileNotFoundError(f"Checkpoint not found: {ckpt_path}")
@@ -37,7 +37,7 @@ def load_checkpoint(run_id=0):
 
 
 # ── Plot training curves ──────────────────────────────────────
-def plot_training_curves(run_id=0):
+def plot_training_curves(run_id=1):
     log_path = os.path.join(Config.LOG_DIR, f"history_run{run_id}.json")
     if not os.path.exists(log_path):
         print(f"No history file found for run {run_id}, skipping curves.")
@@ -67,7 +67,7 @@ def plot_training_curves(run_id=0):
 
 
 # ── Confusion matrix ──────────────────────────────────────────
-def plot_confusion_matrix(labels, preds, idx_to_class, run_id=0, top_n=20):
+def plot_confusion_matrix(labels, preds, idx_to_class, run_id=1, top_n=20):
     unique, counts = np.unique(labels, return_counts=True)
     top_classes    = unique[np.argsort(-counts)][:top_n]
     mask           = np.isin(labels, top_classes)
@@ -98,7 +98,7 @@ def plot_confusion_matrix(labels, preds, idx_to_class, run_id=0, top_n=20):
 
 
 # ── ROC curve ─────────────────────────────────────────────────
-def plot_roc(labels, probs, run_id=0, n_classes=101):
+def plot_roc(labels, probs, run_id=1, n_classes=101):
     labels_bin = label_binarize(labels, classes=list(range(n_classes)))
     probs_arr  = np.array(probs)
 
@@ -125,7 +125,7 @@ def plot_roc(labels, probs, run_id=0, n_classes=101):
 
 
 # ── PR curve ──────────────────────────────────────────────────
-def plot_pr(labels, probs, run_id=0, n_classes=101):
+def plot_pr(labels, probs, run_id=1, n_classes=101):
     labels_bin = label_binarize(labels, classes=list(range(n_classes)))
     probs_arr  = np.array(probs)
     macro_map  = average_precision_score(labels_bin, probs_arr, average="macro")

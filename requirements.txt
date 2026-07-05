@@ -1,0 +1,11 @@
+# MG-ViT Requirements
+# Install with: pip install -r requirements.txt
+
+torch>=2.1.0          # MPS support is stable from 2.1+
+torchvision>=0.16.0
+timm>=0.9.0           # for ViT pretrained models
+opencv-python>=4.8.0  # for video reading
+numpy>=1.24.0
+scikit-learn>=1.3.0   # for metrics, confusion matrix, t-SNE
+matplotlib>=3.7.0     # for all plots
+tqdm>=4.65.0          # progress bars
